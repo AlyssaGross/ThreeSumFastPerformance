@@ -48,7 +48,7 @@ public class ThreeSumFastPerformance {
         int count = 0;
         for(int i = 0; i<len-2; i++)                                                        // control index of the first element in pair
             for(int j = i +1; j< len; j++)                                                  // control index of the second element in pair
-                   if (Arrays.binarySearch(testList, -testList[i]-testList[j])> j)     // use binary search to check if the third element that completes the triple exists in the list
+                   if (Arrays.binarySearch(testList, -testList[i]-testList[j])> j)          // use binary search to check if the third element that completes the triple exists in the list
                         count++;                                                            // increment count if true
 
         return count;
@@ -112,7 +112,7 @@ public class ThreeSumFastPerformance {
         resultsWriter.println("#InputSize    AverageTime");                                             // # marks a comment in gnuplot data 
         resultsWriter.flush();
 
-        for(int inputSize=MININPUTSIZE;inputSize<=MAXINPUTSIZE; inputSize*= 2) {                        // for each size of input we want to test: in this case starting small and doubling the size each time
+        for(int inputSize=MININPUTSIZE;inputSize<=MAXINPUTSIZE; inputSize*= 2) {                        // for each size of input we want to test: starting at MININPUTSIZE and doubling each iteration until reaching MAXINPUTSIZE
 
             System.out.println("Running test for input size "+inputSize+" ... ");                       // progress message... 
             System.out.print("    Running trial batch...");
